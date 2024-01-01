@@ -1,0 +1,36 @@
+<h1>Customers Application</h1>
+
+<table>
+  <tr>
+    <td>Name</td>
+    <td> <input type="text" [(ngModel)] = "customer.name"/></td>
+  </tr>
+  <tr>
+    <td>Email</td>
+    <td> <input type="text" [(ngModel)] = "customer.email"/> </td>
+  </tr>
+  <tr>
+    <td>City</td>
+    <td> <input type="text" [(ngModel)] = "customer.city"/> </td>
+  </tr>
+  <tr>
+    <!-- <td></td> -->
+    <td> <input type="button" value="Save" (click)="saveCustomer()"/></td>
+  </tr>
+</table>
+
+<table border="1">
+  <tr>
+    <th>S.No</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>City</th>
+  </tr>
+
+  <tr *ngFor="let customer of customers; let i = index">
+      <td>{{i + 1}}</td>
+      <td>{{customer.name}}</td>
+      <td>{{customer.email}}</td>
+      <td>{{customer.city | uppercase}}</td>
+  </tr>
+</table>
